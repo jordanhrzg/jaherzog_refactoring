@@ -19,8 +19,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
-
 /**
  * <p>Title: </p>
  * <p>Description: </p>
@@ -47,12 +45,12 @@ public class LinkDialog extends JDialog {
     JPanel buttonsPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
     JButton okB = new JButton();
   JButton cancelB = new JButton();
-  String[] aligns = {"", Local.getString("left"), 
-  Local.getString("center"), Local.getString("right")};
+  String[] aligns = {"", main.java.memoranda.util.Util.getString("left"), 
+  main.java.memoranda.util.Util.getString("center"), main.java.memoranda.util.Util.getString("right")};
   public boolean CANCELLED = false;
 
   public LinkDialog(Frame frame) {
-    super(frame, Local.getString("Insert hyperlink"), true);
+    super(frame, main.java.memoranda.util.Util.getString("Insert hyperlink"), true);
     try {
       jbInit();
       pack();
@@ -71,7 +69,7 @@ public class LinkDialog extends JDialog {
 	this.setResizable(false);
         header.setFont(new java.awt.Font("Dialog", 0, 20));
         header.setForeground(new Color(0, 0, 124));
-        header.setText(Local.getString("Insert hyperlink"));
+        header.setText(main.java.memoranda.util.Util.getString("Insert hyperlink"));
         header.setIcon(new ImageIcon(
             main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
             "/htmleditor/icons/linkbig.png")));
@@ -80,7 +78,7 @@ public class LinkDialog extends JDialog {
         topPanel.add(header);
         this.getContentPane().add(topPanel, BorderLayout.NORTH);
         
-        lblURL.setText(Local.getString("URL"));
+        lblURL.setText(main.java.memoranda.util.Util.getString("URL"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0; gbc.gridy = 0;
         gbc.insets = new Insets(10, 10, 5, 5);
@@ -93,7 +91,7 @@ public class LinkDialog extends JDialog {
         gbc.insets = new Insets(10, 5, 5, 10);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(txtURL, gbc);
-        lblName.setText(Local.getString("Name"));
+        lblName.setText(main.java.memoranda.util.Util.getString("Name"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0; gbc.gridy = 1;
         gbc.insets = new Insets(5, 10, 5, 5);
@@ -105,7 +103,7 @@ public class LinkDialog extends JDialog {
         gbc.insets = new Insets(5, 5, 5, 10);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(txtName, gbc);
-        lblTitle.setText(Local.getString("Title"));
+        lblTitle.setText(main.java.memoranda.util.Util.getString("Title"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0; gbc.gridy = 2;
         gbc.insets = new Insets(5, 10, 5, 5);
@@ -117,7 +115,7 @@ public class LinkDialog extends JDialog {
         gbc.insets = new Insets(5, 5, 5, 10);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(txtTitle, gbc);
-        lblDesc.setText(Local.getString("Description"));
+        lblDesc.setText(main.java.memoranda.util.Util.getString("Description"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0; gbc.gridy = 3;
         gbc.insets = new Insets(5, 10, 5, 5);
@@ -129,7 +127,7 @@ public class LinkDialog extends JDialog {
         gbc.insets = new Insets(5, 5, 5, 10);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(txtDesc, gbc);
-        chkNewWin.setText(Local.getString("Open in a new window"));
+        chkNewWin.setText(main.java.memoranda.util.Util.getString("Open in a new window"));
         gbc = new GridBagConstraints();
         gbc.gridx = 1; gbc.gridy = 4;
         gbc.insets = new Insets(5, 5, 10, 10);
@@ -152,7 +150,7 @@ public class LinkDialog extends JDialog {
     cancelB.setMaximumSize(new Dimension(100, 26));
     cancelB.setMinimumSize(new Dimension(100, 26));
     cancelB.setPreferredSize(new Dimension(100, 26));
-    cancelB.setText(Local.getString("Cancel"));
+    cancelB.setText(main.java.memoranda.util.Util.getString("Cancel"));
     cancelB.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(ActionEvent e) {
         cancelB_actionPerformed(e);

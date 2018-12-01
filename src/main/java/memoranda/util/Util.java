@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Set;
 import java.util.Iterator;
 
@@ -30,6 +31,31 @@ import java.util.Random;
  */
 /*$Id: Util.java,v 1.13 2007/03/20 08:22:41 alexeya Exp $*/
 public class Util {
+    
+    /**
+     * TASK 2-2 SMELL BETWEEN CLASSES
+     * main/java/memorand/ui/htmleditor/util/Local.java seemed like a lazy class, 
+     * so I leveraged this utility class to manage the messages and its accessors.
+     */
+    
+    static Hashtable messages = null;
+    
+    public static void setMessages(Hashtable msgs) {
+         messages = msgs;
+    }  
+    
+    public static String getString(String key) {
+         if (messages == null){
+             return key;
+         }
+         String msg = (String) messages.get(key.trim().toUpperCase());
+         if ((msg != null) && (msg.length() > 0)){
+             return msg;
+         }
+         else {
+             return key;
+         }
+    }
 
 	static long seed = 0;
 	

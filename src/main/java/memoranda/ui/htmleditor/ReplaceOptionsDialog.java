@@ -17,8 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
-
 /**
  * <p>Title: </p>
  * <p>Description: </p>
@@ -66,7 +64,7 @@ public class ReplaceOptionsDialog extends JDialog {
     JButton noB = new JButton();
 
     public ReplaceOptionsDialog(Frame frame, String text) {
-        super(frame, Local.getString("Replace"), true);
+        super(frame, main.java.memoranda.util.Util.getString("Replace"), true);
         try {
             textLabel.setText(text);
             jbInit();
@@ -90,7 +88,7 @@ public class ReplaceOptionsDialog extends JDialog {
         
         panel1.setLayout(borderLayout1);
        
-        cancelB.setText(Local.getString("Cancel"));
+        cancelB.setText(main.java.memoranda.util.Util.getString("Cancel"));
         cancelB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cancelB_actionPerformed(e);
@@ -98,7 +96,7 @@ public class ReplaceOptionsDialog extends JDialog {
         });
        // cancelB.setFocusable(false);
       
-        yesAllB.setText(Local.getString("Yes to all"));
+        yesAllB.setText(main.java.memoranda.util.Util.getString("Yes to all"));
         yesAllB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 yesAllB_actionPerformed(e);
@@ -117,13 +115,13 @@ public class ReplaceOptionsDialog extends JDialog {
                 yesB_actionPerformed(e);
             }
         });
-        yesB.setText(Local.getString("Yes"));
+        yesB.setText(main.java.memoranda.util.Util.getString("Yes"));
         
         //yesB.setFocusable(false);
         this.getRootPane().setDefaultButton(yesB);
         
       
-        noB.setText(Local.getString("No"));
+        noB.setText(main.java.memoranda.util.Util.getString("No"));
         noB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 noB_actionPerformed(e);

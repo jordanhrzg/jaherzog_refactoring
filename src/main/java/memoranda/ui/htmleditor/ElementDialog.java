@@ -18,7 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
+import main.java.memoranda.util.Util;
 
 /**
  * <p>Title: </p>
@@ -46,7 +46,7 @@ public class ElementDialog extends JDialog {
   GridBagConstraints gbc;
 
   public ElementDialog(Frame frame) {
-    super(frame, Local.getString("Object properties"), true);
+    super(frame, Util.getString("Object properties"), true);
     try {
       jbInit();
       pack();
@@ -66,7 +66,7 @@ public class ElementDialog extends JDialog {
 	headerPanel.setBackground(Color.WHITE);
 	header.setFont(new java.awt.Font("Dialog", 0, 20));
 	header.setForeground(new Color(0, 0, 124));
-	header.setText(Local.getString("Object properties"));
+	header.setText(Util.getString("Object properties"));
 	header.setIcon(new ImageIcon(
 		main.java.memoranda.ui.htmleditor.ElementDialog.class.getResource(
 		"/htmleditor/icons/textbig.png")));
@@ -75,7 +75,7 @@ public class ElementDialog extends JDialog {
     
     areaPanel.setBorder(BorderFactory.createEtchedBorder(Color.white,
     	new Color(142, 142, 142)));
-	lblID.setText(Local.getString("ID"));
+	lblID.setText(Util.getString("ID"));
 	gbc = new GridBagConstraints();
 	gbc.gridx = 0; gbc.gridy = 0;
 	gbc.anchor = GridBagConstraints.WEST;
@@ -87,7 +87,7 @@ public class ElementDialog extends JDialog {
 	gbc.anchor = GridBagConstraints.WEST;
 	gbc.insets = new Insets(10, 5, 5, 10);
 	areaPanel.add(idField, gbc);
-	lblClass.setText(Local.getString("Class"));
+	lblClass.setText(Util.getString("Class"));
 	gbc = new GridBagConstraints();
 	gbc.gridx = 0; gbc.gridy = 1;
 	gbc.anchor = GridBagConstraints.WEST;
@@ -99,7 +99,7 @@ public class ElementDialog extends JDialog {
 	gbc.anchor = GridBagConstraints.WEST;
 	gbc.insets = new Insets(5, 5, 5, 10);
 	areaPanel.add(classField, gbc);
-	lblStyle.setText(Local.getString("Style"));
+	lblStyle.setText(Util.getString("Style"));
 	gbc = new GridBagConstraints();
 	gbc.gridx = 0; gbc.gridy = 2;
 	gbc.anchor = GridBagConstraints.WEST;
@@ -116,7 +116,7 @@ public class ElementDialog extends JDialog {
     cancelB.setMaximumSize(new Dimension(100, 26));
     cancelB.setMinimumSize(new Dimension(100, 26));
     cancelB.setPreferredSize(new Dimension(100, 26));
-    cancelB.setText(Local.getString("Cancel"));
+    cancelB.setText(Util.getString("Cancel"));
     cancelB.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(ActionEvent e) {
         cancelB_actionPerformed(e);
@@ -125,7 +125,7 @@ public class ElementDialog extends JDialog {
     okB.setMaximumSize(new Dimension(100, 26));
     okB.setMinimumSize(new Dimension(100, 26));
     okB.setPreferredSize(new Dimension(100, 26));
-    okB.setText(Local.getString("Ok"));
+    okB.setText(Util.getString("Ok"));
     okB.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(ActionEvent e) {
         okB_actionPerformed(e);

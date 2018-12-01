@@ -25,8 +25,6 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
-
 /**
  * <p>Title: </p>
  * <p>Description: </p>
@@ -68,7 +66,7 @@ public class ImageDialog extends JDialog implements WindowListener {
     public boolean CANCELLED = false;
 
     public ImageDialog(Frame frame) {
-        super(frame, Local.getString("Image"), true);
+        super(frame, main.java.memoranda.util.Util.getString("Image"), true);
         try {
             jbInit();
             pack();
@@ -90,7 +88,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         headerPanel.setBackground(Color.WHITE);
         header.setFont(new java.awt.Font("Dialog", 0, 20));
         header.setForeground(new Color(0, 0, 124));
-        header.setText(Local.getString("Image"));
+        header.setText(main.java.memoranda.util.Util.getString("Image"));
         header.setIcon(new ImageIcon(
                 main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
                         "/htmleditor/icons/imgbig.png")));
@@ -99,7 +97,7 @@ public class ImageDialog extends JDialog implements WindowListener {
 
         areaPanel.setBorder(new EtchedBorder(Color.white, new Color(142, 142,
                 142)));
-        jLabel1.setText(Local.getString("Image file"));
+        jLabel1.setText(main.java.memoranda.util.Util.getString("Image file"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -132,7 +130,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(10, 5, 5, 10);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(browseB, gbc);
-        jLabel2.setText(Local.getString("ALT text"));
+        jLabel2.setText(main.java.memoranda.util.Util.getString("ALT text"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -149,7 +147,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         areaPanel.add(altField, gbc);
-        jLabel3.setText(Local.getString("Width"));
+        jLabel3.setText(main.java.memoranda.util.Util.getString("Width"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -164,7 +162,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(widthField, gbc);
-        jLabel4.setText(Local.getString("Height"));
+        jLabel4.setText(main.java.memoranda.util.Util.getString("Height"));
         gbc = new GridBagConstraints();
         gbc.gridx = 2;
         gbc.gridy = 2;
@@ -179,7 +177,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(heightField, gbc);
-        jLabel5.setText(Local.getString("H. space"));
+        jLabel5.setText(main.java.memoranda.util.Util.getString("H. space"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 3;
@@ -195,7 +193,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(hspaceField, gbc);
-        jLabel6.setText(Local.getString("V. space"));
+        jLabel6.setText(main.java.memoranda.util.Util.getString("V. space"));
         gbc = new GridBagConstraints();
         gbc.gridx = 2;
         gbc.gridy = 3;
@@ -211,7 +209,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(vspaceField, gbc);
-        jLabel7.setText(Local.getString("Border"));
+        jLabel7.setText(main.java.memoranda.util.Util.getString("Border"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 4;
@@ -227,7 +225,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(borderField, gbc);
-        jLabel8.setText(Local.getString("Align"));
+        jLabel8.setText(main.java.memoranda.util.Util.getString("Align"));
         gbc = new GridBagConstraints();
         gbc.gridx = 2;
         gbc.gridy = 4;
@@ -245,7 +243,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         areaPanel.add(alignCB, gbc);
-        jLabel9.setText(Local.getString("Hyperlink"));
+        jLabel9.setText(main.java.memoranda.util.Util.getString("Hyperlink"));
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 5;
@@ -267,7 +265,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         okB.setMaximumSize(new Dimension(100, 26));
         okB.setMinimumSize(new Dimension(100, 26));
         okB.setPreferredSize(new Dimension(100, 26));
-        okB.setText(Local.getString("Ok"));
+        okB.setText(main.java.memoranda.util.Util.getString("Ok"));
         okB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 okB_actionPerformed(e);
@@ -277,7 +275,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         cancelB.setMaximumSize(new Dimension(100, 26));
         cancelB.setMinimumSize(new Dimension(100, 26));
         cancelB.setPreferredSize(new Dimension(100, 26));
-        cancelB.setText(Local.getString("Cancel"));
+        cancelB.setText(main.java.memoranda.util.Util.getString("Cancel"));
         cancelB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cancelB_actionPerformed(e);
@@ -347,31 +345,28 @@ public class ImageDialog extends JDialog implements WindowListener {
 
     void browseB_actionPerformed(ActionEvent e) {
         // Fix until Sun's JVM supports more locales...
-        UIManager.put("FileChooser.lookInLabelText", Local
-                .getString("Look in:"));
-        UIManager.put("FileChooser.upFolderToolTipText", Local.getString(
+        UIManager.put("FileChooser.lookInLabelText", main.java.memoranda.util.Util.getString("Look in:"));
+        UIManager.put("FileChooser.upFolderToolTipText", main.java.memoranda.util.Util.getString(
                 "Up One Level"));
-        UIManager.put("FileChooser.newFolderToolTipText", Local.getString(
+        UIManager.put("FileChooser.newFolderToolTipText", main.java.memoranda.util.Util.getString(
                 "Create New Folder"));
-        UIManager.put("FileChooser.listViewButtonToolTipText", Local
-                .getString("List"));
-        UIManager.put("FileChooser.detailsViewButtonToolTipText", Local
-                .getString("Details"));
-        UIManager.put("FileChooser.fileNameLabelText", Local.getString(
+        UIManager.put("FileChooser.listViewButtonToolTipText", main.java.memoranda.util.Util.getString("List"));
+        UIManager.put("FileChooser.detailsViewButtonToolTipText", main.java.memoranda.util.Util.getString("Details"));
+        UIManager.put("FileChooser.fileNameLabelText", main.java.memoranda.util.Util.getString(
                 "File Name:"));
-        UIManager.put("FileChooser.filesOfTypeLabelText", Local.getString(
+        UIManager.put("FileChooser.filesOfTypeLabelText", main.java.memoranda.util.Util.getString(
                 "Files of Type:"));
-        UIManager.put("FileChooser.openButtonText", Local.getString("Open"));
-        UIManager.put("FileChooser.openButtonToolTipText", Local.getString(
+        UIManager.put("FileChooser.openButtonText", main.java.memoranda.util.Util.getString("Open"));
+        UIManager.put("FileChooser.openButtonToolTipText", main.java.memoranda.util.Util.getString(
                 "Open selected file"));
         UIManager
-                .put("FileChooser.cancelButtonText", Local.getString("Cancel"));
-        UIManager.put("FileChooser.cancelButtonToolTipText", Local.getString(
+                .put("FileChooser.cancelButtonText", main.java.memoranda.util.Util.getString("Cancel"));
+        UIManager.put("FileChooser.cancelButtonToolTipText", main.java.memoranda.util.Util.getString(
                 "Cancel"));
 
         JFileChooser chooser = new JFileChooser();
         chooser.setFileHidingEnabled(false);
-        chooser.setDialogTitle(Local.getString("Choose an image file"));
+        chooser.setDialogTitle(main.java.memoranda.util.Util.getString("Choose an image file"));
         chooser.setAcceptAllFileFilterUsed(false);
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         chooser.addChoosableFileFilter(

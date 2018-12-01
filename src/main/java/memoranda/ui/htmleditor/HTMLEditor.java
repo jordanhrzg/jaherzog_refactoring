@@ -56,8 +56,6 @@ import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
-
 /**
  *  
  */
@@ -105,7 +103,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action boldAction =
 		new HTMLEditorAction(
-			Local.getString("Bold"),
+			main.java.memoranda.util.Util.getString("Bold"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/bold.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			boldActionB_actionPerformed(e);
@@ -114,7 +112,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action italicAction =
 		new HTMLEditorAction(
-			Local.getString("Italic"),
+			main.java.memoranda.util.Util.getString("Italic"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/italic.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			italicActionB_actionPerformed(e);
@@ -123,7 +121,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action underAction =
 		new HTMLEditorAction(
-			Local.getString("Underline"),
+			main.java.memoranda.util.Util.getString("Underline"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/underline.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			underActionB_actionPerformed(e);
@@ -132,7 +130,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action ulAction =
 		new HTMLEditorAction(
-			Local.getString("Unordered list"),
+			main.java.memoranda.util.Util.getString("Unordered list"),
 			new ImageIcon(
 				cl.getResource("/htmleditor/icons/listunordered.png"))) {
 		public void actionPerformed(ActionEvent e) {
@@ -142,7 +140,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action olAction =
 		new HTMLEditorAction(
-			Local.getString("Ordered list"),
+			main.java.memoranda.util.Util.getString("Ordered list"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/listordered.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			olActionB_actionPerformed(e);
@@ -151,7 +149,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action lAlignAction =
 		new HTMLEditorAction(
-			Local.getString("Align left"),
+			main.java.memoranda.util.Util.getString("Align left"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/alignleft.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			lAlignActionB_actionPerformed(e);
@@ -160,7 +158,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action cAlignAction =
 		new HTMLEditorAction(
-			Local.getString("Align center"),
+			main.java.memoranda.util.Util.getString("Align center"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/aligncenter.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			cAlignActionB_actionPerformed(e);
@@ -169,7 +167,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action rAlignAction =
 		new HTMLEditorAction(
-			Local.getString("Align right"),
+			main.java.memoranda.util.Util.getString("Align right"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/alignright.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			rAlignActionB_actionPerformed(e);
@@ -182,7 +180,7 @@ public class HTMLEditor extends JPanel {
 	 */
 	public Action imageAction =
 		new HTMLEditorAction(
-			Local.getString("Insert image"),
+			main.java.memoranda.util.Util.getString("Insert image"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/image.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			imageActionB_actionPerformed(e);
@@ -191,7 +189,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action tableAction =
 		new HTMLEditorAction(
-			Local.getString("Insert table"),
+			main.java.memoranda.util.Util.getString("Insert table"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/table.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			tableActionB_actionPerformed(e);
@@ -200,7 +198,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action linkAction =
 		new HTMLEditorAction(
-			Local.getString("Insert hyperlink"),
+			main.java.memoranda.util.Util.getString("Insert hyperlink"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/link.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			linkActionB_actionPerformed(e);
@@ -209,7 +207,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action propsAction =
 		new HTMLEditorAction(
-			Local.getString("Object properties"),
+			main.java.memoranda.util.Util.getString("Object properties"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/properties.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			propsActionB_actionPerformed(e);
@@ -217,7 +215,7 @@ public class HTMLEditor extends JPanel {
 	};
 
 	public Action selectAllAction =
-		new HTMLEditorAction(Local.getString("Select all")) {
+		new HTMLEditorAction(main.java.memoranda.util.Util.getString("Select all")) {
 		public void actionPerformed(ActionEvent e) {
 			editor.selectAll();
 		}
@@ -225,7 +223,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action insertHRAction =
 		new HTMLEditorAction(
-			Local.getString("Insert horizontal rule"),
+			main.java.memoranda.util.Util.getString("Insert horizontal rule"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/hr.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			/*
@@ -275,7 +273,7 @@ public class HTMLEditor extends JPanel {
 
 	void addCharTablePanel() {
 		showToolsPanel();
-		toolsPanel.addTab(Local.getString("Characters"), charTablePanel);
+		toolsPanel.addTab(main.java.memoranda.util.Util.getString("Characters"), charTablePanel);
 	}
 
 	void removeCharTablePanel() {
@@ -286,7 +284,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action insCharAction =
 		new HTMLEditorAction(
-			Local.getString("Insert character"),
+			main.java.memoranda.util.Util.getString("Insert character"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/char.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			if (!charTableShow) {
@@ -304,7 +302,7 @@ public class HTMLEditor extends JPanel {
 
 	public Action findAction =
 		new HTMLEditorAction(
-			Local.getString("Find & Replace"),
+			main.java.memoranda.util.Util.getString("Find & Replace"),
 			new ImageIcon(cl.getResource("/htmleditor/icons/find.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			doFind();
@@ -470,16 +468,16 @@ public class HTMLEditor extends JPanel {
 
 	String[] elementTypes =
 		{
-			Local.getString("Paragraph"),
-			Local.getString("Header") + " 1",
-			Local.getString("Header") + " 2",
-			Local.getString("Header") + " 3",
-			Local.getString("Header") + " 4",
-			Local.getString("Header") + " 5",
-			Local.getString("Header") + " 6",
-			Local.getString("Preformatted"),
+			main.java.memoranda.util.Util.getString("Paragraph"),
+			main.java.memoranda.util.Util.getString("Header") + " 1",
+			main.java.memoranda.util.Util.getString("Header") + " 2",
+			main.java.memoranda.util.Util.getString("Header") + " 3",
+			main.java.memoranda.util.Util.getString("Header") + " 4",
+			main.java.memoranda.util.Util.getString("Header") + " 5",
+			main.java.memoranda.util.Util.getString("Header") + " 6",
+			main.java.memoranda.util.Util.getString("Preformatted"),
 		//"Address",
-		Local.getString("Blockquote")};
+		main.java.memoranda.util.Util.getString("Blockquote")};
 	public JComboBox blockCB = new JComboBox(elementTypes);
 	boolean blockCBEventsLock = false;
 
@@ -494,14 +492,14 @@ public class HTMLEditor extends JPanel {
 
 	String[] inlineTypes =
 		{
-			Local.getString("Normal"),
-			Local.getString("Emphasis"),
-			Local.getString("Strong"),
-			Local.getString("Code"),
-			Local.getString("Cite"),
-			Local.getString("Superscript"),
-			Local.getString("Subscript"),
-			Local.getString("Custom style") + "..." };
+			main.java.memoranda.util.Util.getString("Normal"),
+			main.java.memoranda.util.Util.getString("Emphasis"),
+			main.java.memoranda.util.Util.getString("Strong"),
+			main.java.memoranda.util.Util.getString("Code"),
+			main.java.memoranda.util.Util.getString("Cite"),
+			main.java.memoranda.util.Util.getString("Superscript"),
+			main.java.memoranda.util.Util.getString("Subscript"),
+			main.java.memoranda.util.Util.getString("Custom style") + "..." };
 	public JComboBox inlineCB = new JComboBox(inlineTypes);
 	boolean inlineCBEventsLock = false;
 
@@ -549,8 +547,8 @@ public class HTMLEditor extends JPanel {
 		cutAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.CTRL_MASK));
-		cutAction.putValue(Action.NAME, Local.getString("Cut"));
-		cutAction.putValue(Action.SHORT_DESCRIPTION, Local.getString("Cut"));
+		cutAction.putValue(Action.NAME, main.java.memoranda.util.Util.getString("Cut"));
+		cutAction.putValue(Action.SHORT_DESCRIPTION, main.java.memoranda.util.Util.getString("Cut"));
 
 		copyAction.putValue(
 			Action.SMALL_ICON,
@@ -558,8 +556,8 @@ public class HTMLEditor extends JPanel {
 		copyAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_MASK));
-		copyAction.putValue(Action.NAME, Local.getString("Copy"));
-		copyAction.putValue(Action.SHORT_DESCRIPTION, Local.getString("Copy"));
+		copyAction.putValue(Action.NAME, main.java.memoranda.util.Util.getString("Copy"));
+		copyAction.putValue(Action.SHORT_DESCRIPTION, main.java.memoranda.util.Util.getString("Copy"));
 
 		pasteAction.putValue(
 			Action.SMALL_ICON,
@@ -567,10 +565,10 @@ public class HTMLEditor extends JPanel {
 		pasteAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_MASK));
-		pasteAction.putValue(Action.NAME, Local.getString("Paste"));
+		pasteAction.putValue(Action.NAME, main.java.memoranda.util.Util.getString("Paste"));
 		pasteAction.putValue(
 			Action.SHORT_DESCRIPTION,
-			Local.getString("Paste"));
+			main.java.memoranda.util.Util.getString("Paste"));
 
 		stylePasteAction.putValue(
 			Action.ACCELERATOR_KEY,
@@ -579,10 +577,10 @@ public class HTMLEditor extends JPanel {
 				KeyEvent.CTRL_MASK + KeyEvent.SHIFT_MASK));
 		stylePasteAction.putValue(
 			Action.NAME,
-			Local.getString("Paste special"));
+			main.java.memoranda.util.Util.getString("Paste special"));
 		stylePasteAction.putValue(
 			Action.SHORT_DESCRIPTION,
-			Local.getString("Paste special"));
+			main.java.memoranda.util.Util.getString("Paste special"));
 
 		selectAllAction.putValue(
 			Action.ACCELERATOR_KEY,
@@ -600,10 +598,10 @@ public class HTMLEditor extends JPanel {
 		breakAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_MASK));
-		breakAction.putValue(Action.NAME, Local.getString("Insert Break"));
+		breakAction.putValue(Action.NAME, main.java.memoranda.util.Util.getString("Insert Break"));
 		breakAction.putValue(
 			Action.SHORT_DESCRIPTION,
-			Local.getString("Insert Break"));
+			main.java.memoranda.util.Util.getString("Insert Break"));
 
 		findAction.putValue(
 			Action.ACCELERATOR_KEY,
@@ -947,7 +945,7 @@ public class HTMLEditor extends JPanel {
 
 		/*
 		 * jMenuItemInsCell.setAction(new InsertTableCellAction());
-		 * jMenuItemInsCell.setText(Local.getString("Insert table cell"));
+		 * jMenuItemInsCell.setText(main.java.memoranda.util.Util.getString("Insert table cell"));
 		 * 
 		 * jMenuItemInsRow.setAction(new InsertTableRowAction());
 		 */
@@ -1026,7 +1024,7 @@ public class HTMLEditor extends JPanel {
 
 	class UndoAction extends AbstractAction {
 		public UndoAction() {
-			super(Local.getString("Undo"));
+			super(main.java.memoranda.util.Util.getString("Undo"));
 			setEnabled(false);
 			putValue(
 				Action.SMALL_ICON,
@@ -1055,14 +1053,14 @@ public class HTMLEditor extends JPanel {
 					undo.getUndoPresentationName());
 			} else {
 				setEnabled(false);
-				putValue(Action.SHORT_DESCRIPTION, Local.getString("Undo"));
+				putValue(Action.SHORT_DESCRIPTION, main.java.memoranda.util.Util.getString("Undo"));
 			}
 		}
 	}
 
 	class RedoAction extends AbstractAction {
 		public RedoAction() {
-			super(Local.getString("Redo"));
+			super(main.java.memoranda.util.Util.getString("Redo"));
 			setEnabled(false);
 			putValue(
 				Action.SMALL_ICON,
@@ -1093,7 +1091,7 @@ public class HTMLEditor extends JPanel {
 					undo.getRedoPresentationName());
 			} else {
 				setEnabled(false);
-				putValue(Action.SHORT_DESCRIPTION, Local.getString("Redo"));
+				putValue(Action.SHORT_DESCRIPTION, main.java.memoranda.util.Util.getString("Redo"));
 			}
 		}
 	}
@@ -1493,7 +1491,7 @@ public class HTMLEditor extends JPanel {
 	class BreakAction extends AbstractAction {
 		BreakAction() {
 			super(
-				Local.getString("Insert break"),
+				main.java.memoranda.util.Util.getString("Insert break"),
 				new ImageIcon(cl.getResource("/htmleditor/icons/break.png")));
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -1525,7 +1523,7 @@ public class HTMLEditor extends JPanel {
 
 	class InsertTableRowAction extends AbstractAction {
 		InsertTableRowAction() {
-			super(Local.getString("Insert table row"));
+			super(main.java.memoranda.util.Util.getString("Insert table row"));
 			this.putValue(
 				Action.ACCELERATOR_KEY,
 				KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.CTRL_MASK));
@@ -1574,7 +1572,7 @@ public class HTMLEditor extends JPanel {
 
 	class InsertTableCellAction extends AbstractAction {
 		InsertTableCellAction() {
-			super(Local.getString("Insert table cell"));
+			super(main.java.memoranda.util.Util.getString("Insert table cell"));
 			this.putValue(
 				Action.ACCELERATOR_KEY,
 				KeyStroke.getKeyStroke(
@@ -1935,8 +1933,8 @@ public class HTMLEditor extends JPanel {
 			ex.printStackTrace();
 		}
 		dlg.chkNewWin.setSelected(target.toUpperCase().equals("_BLANK"));
-		dlg.header.setText(Local.getString("Hyperlink properties"));
-		dlg.setTitle(Local.getString("Hyperlink properties"));
+		dlg.header.setText(main.java.memoranda.util.Util.getString("Hyperlink properties"));
+		dlg.setTitle(main.java.memoranda.util.Util.getString("Hyperlink properties"));
 		dlg.setVisible(true);
 		if (dlg.CANCELLED)
 			return;
@@ -1988,7 +1986,7 @@ public class HTMLEditor extends JPanel {
 		ImageDialog dlg = new ImageDialog(null);
 		dlg.setLocation(imageActionB.getLocationOnScreen());
 		dlg.setModal(true);
-		dlg.setTitle(Local.getString("Image properties"));
+		dlg.setTitle(main.java.memoranda.util.Util.getString("Image properties"));
 		dlg.fileField.setText(src);
 		dlg.altField.setText(alt);
 		dlg.widthField.setText(width);
@@ -2068,7 +2066,7 @@ public class HTMLEditor extends JPanel {
 			(frmSize.width - dlgSize.width) / 2 + loc.x,
 			(frmSize.height - dlgSize.height) / 2 + loc.y);
 		dlg.setModal(true);
-		dlg.setTitle(Local.getString("Object properties"));
+		dlg.setTitle(main.java.memoranda.util.Util.getString("Object properties"));
 		dlg.idField.setText(id);
 		dlg.classField.setText(cls);
 		dlg.styleField.setText(sty);
@@ -2094,7 +2092,7 @@ public class HTMLEditor extends JPanel {
 		TdDialog dlg = new TdDialog(null);
 		dlg.setLocation(editor.getLocationOnScreen());
 		dlg.setModal(true);
-		dlg.setTitle(Local.getString("Table properties"));
+		dlg.setTitle(main.java.memoranda.util.Util.getString("Table properties"));
 
 		/** **********PARSE ELEMENTS*********** */
 		// TD***

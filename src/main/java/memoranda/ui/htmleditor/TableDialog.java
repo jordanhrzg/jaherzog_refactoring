@@ -23,8 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.UIManager;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
-
 /**
  * <p>Title: </p>
  * <p>Description: </p>
@@ -44,10 +42,10 @@ public class TableDialog extends JDialog {
 	public JTextField heightField = new JTextField();
 	JLabel lblHeight = new JLabel();
 	public JTextField widthField = new JTextField();
-	String[] aligns = {"", Local.getString("left"), Local.getString("center"),
-		Local.getString("right")};
-	String[] valigns = {"", Local.getString("top"), Local.getString("center"),
-		Local.getString("bottom")};
+	String[] aligns = {"", main.java.memoranda.util.Util.getString("left"), main.java.memoranda.util.Util.getString("center"),
+		main.java.memoranda.util.Util.getString("right")};
+	String[] valigns = {"", main.java.memoranda.util.Util.getString("top"), main.java.memoranda.util.Util.getString("center"),
+		main.java.memoranda.util.Util.getString("bottom")};
 	JLabel lblPadding = new JLabel();
 	JLabel lblSpacing = new JLabel();
 	JPanel headerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -70,7 +68,7 @@ public class TableDialog extends JDialog {
 	public JSpinner border = new JSpinner(new SpinnerNumberModel(1, 0, 999, 1));
 
 	public TableDialog(Frame frame) {
-		super(frame, Local.getString("Table"), true);
+		super(frame, main.java.memoranda.util.Util.getString("Table"), true);
 		try {
 			jbInit();
 			pack();
@@ -88,7 +86,7 @@ public class TableDialog extends JDialog {
 		headerPanel.setBackground(Color.WHITE);
 		header.setFont(new java.awt.Font("Dialog", 0, 20));
 		header.setForeground(new Color(0, 0, 124));
-		header.setText(Local.getString("Table"));
+		header.setText(main.java.memoranda.util.Util.getString("Table"));
 		header.setIcon(new ImageIcon(
 				main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
 				"/htmleditor/icons/tablebig.png")));
@@ -97,7 +95,7 @@ public class TableDialog extends JDialog {
 		
 		areaPanel.setBorder(BorderFactory.createEtchedBorder(Color.white,
 			new Color(142, 142, 142)));
-		lblColumns.setText(Local.getString("Columns"));
+		lblColumns.setText(main.java.memoranda.util.Util.getString("Columns"));
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0; gbc.gridy = 0;
 		gbc.anchor = GridBagConstraints.WEST;
@@ -109,7 +107,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(10, 5, 5, 0);
 		areaPanel.add(columns, gbc);
-		lblRows.setText(Local.getString("Rows"));
+		lblRows.setText(main.java.memoranda.util.Util.getString("Rows"));
 		gbc = new GridBagConstraints();
 		gbc.gridx = 3; gbc.gridy = 0;
 		gbc.anchor = GridBagConstraints.WEST;
@@ -121,7 +119,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(10, 5, 5, 0);
 		areaPanel.add(rows, gbc);
-		lblWidth.setText(Local.getString("Width"));
+		lblWidth.setText(main.java.memoranda.util.Util.getString("Width"));
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0; gbc.gridy = 1;
 		gbc.anchor = GridBagConstraints.WEST;
@@ -134,7 +132,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 0);
 		areaPanel.add(widthField, gbc);
-		lblHeight.setText(Local.getString("Height"));
+		lblHeight.setText(main.java.memoranda.util.Util.getString("Height"));
 		gbc.gridx = 3; gbc.gridy = 1;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 5);
@@ -144,7 +142,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 0);
 		areaPanel.add(heightField, gbc);
-		lblPadding.setText(Local.getString("Cell padding"));
+		lblPadding.setText(main.java.memoranda.util.Util.getString("Cell padding"));
 		gbc.gridx = 0; gbc.gridy = 2;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 10, 5, 5);
@@ -154,7 +152,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 0);
 		areaPanel.add(cellpadding, gbc);
-		lblSpacing.setText(Local.getString("Cell spacing"));
+		lblSpacing.setText(main.java.memoranda.util.Util.getString("Cell spacing"));
 		gbc.gridx = 3; gbc.gridy = 2;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 5);
@@ -164,7 +162,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 0);
 		areaPanel.add(cellspacing, gbc);
-		lblBorder.setText(Local.getString("Border"));
+		lblBorder.setText(main.java.memoranda.util.Util.getString("Border"));
 		gbc.gridx = 0; gbc.gridy = 3;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 10, 5, 5);
@@ -174,7 +172,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 0);
 		areaPanel.add(border, gbc);
-		lblFillColor.setText(Local.getString("Fill color"));
+		lblFillColor.setText(main.java.memoranda.util.Util.getString("Fill color"));
 		gbc.gridx = 3; gbc.gridy = 3;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 5);
@@ -199,7 +197,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 5, 10);
 		areaPanel.add(bgColorB, gbc);
-		lblOutline.setText(Local.getString("Align"));
+		lblOutline.setText(main.java.memoranda.util.Util.getString("Align"));
 		gbc.gridx = 0; gbc.gridy = 4;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 10, 10, 5);
@@ -212,7 +210,7 @@ public class TableDialog extends JDialog {
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 10, 5);
 		areaPanel.add(alignCB, gbc);																																																																				
-		lblVertOutline.setText(Local.getString("Vert. align"));
+		lblVertOutline.setText(main.java.memoranda.util.Util.getString("Vert. align"));
 		gbc.gridx = 3; gbc.gridy = 4;
 		gbc.anchor = GridBagConstraints.WEST;
 		gbc.insets = new Insets(5, 5, 10, 5);
@@ -230,7 +228,7 @@ public class TableDialog extends JDialog {
 		okB.setMaximumSize(new Dimension(100, 26));
 		okB.setMinimumSize(new Dimension(100, 26));
 		okB.setPreferredSize(new Dimension(100, 26));
-		okB.setText(Local.getString("Ok"));
+		okB.setText(main.java.memoranda.util.Util.getString("Ok"));
 		okB.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				okB_actionPerformed(e);
@@ -240,7 +238,7 @@ public class TableDialog extends JDialog {
 		cancelB.setMaximumSize(new Dimension(100, 26));
 		cancelB.setMinimumSize(new Dimension(100, 26));
 		cancelB.setPreferredSize(new Dimension(100, 26));
-		cancelB.setText(Local.getString("Cancel"));
+		cancelB.setText(main.java.memoranda.util.Util.getString("Cancel"));
 		cancelB.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cancelB_actionPerformed(e);
@@ -264,37 +262,37 @@ public class TableDialog extends JDialog {
 		// Fix until Sun's JVM supports more locales...
 		UIManager.put(
 			"ColorChooser.swatchesNameText",
-			Local.getString("Swatches"));
-		UIManager.put("ColorChooser.hsbNameText", Local.getString("HSB"));
-		UIManager.put("ColorChooser.rgbNameText", Local.getString("RGB"));
+			main.java.memoranda.util.Util.getString("Swatches"));
+		UIManager.put("ColorChooser.hsbNameText", main.java.memoranda.util.Util.getString("HSB"));
+		UIManager.put("ColorChooser.rgbNameText", main.java.memoranda.util.Util.getString("RGB"));
 		UIManager.put(
 			"ColorChooser.swatchesRecentText",
-			Local.getString("Recent:"));
-		UIManager.put("ColorChooser.previewText", Local.getString("Preview"));
+			main.java.memoranda.util.Util.getString("Recent:"));
+		UIManager.put("ColorChooser.previewText", main.java.memoranda.util.Util.getString("Preview"));
 		UIManager.put(
 			"ColorChooser.sampleText",
-			Local.getString("Sample Text")
+			main.java.memoranda.util.Util.getString("Sample Text")
 				+ " "
-				+ Local.getString("Sample Text"));
-		UIManager.put("ColorChooser.okText", Local.getString("OK"));
-		UIManager.put("ColorChooser.cancelText", Local.getString("Cancel"));
-		UIManager.put("ColorChooser.resetText", Local.getString("Reset"));
-		UIManager.put("ColorChooser.hsbHueText", Local.getString("H"));
-		UIManager.put("ColorChooser.hsbSaturationText", Local.getString("S"));
-		UIManager.put("ColorChooser.hsbBrightnessText", Local.getString("B"));
-		UIManager.put("ColorChooser.hsbRedText", Local.getString("R"));
-		UIManager.put("ColorChooser.hsbGreenText", Local.getString("G"));
-		UIManager.put("ColorChooser.hsbBlueText", Local.getString("B2"));
-		UIManager.put("ColorChooser.rgbRedText", Local.getString("Red"));
-		UIManager.put("ColorChooser.rgbGreenText", Local.getString("Green"));
-		UIManager.put("ColorChooser.rgbBlueText", Local.getString("Blue"));
+				+ main.java.memoranda.util.Util.getString("Sample Text"));
+		UIManager.put("ColorChooser.okText", main.java.memoranda.util.Util.getString("OK"));
+		UIManager.put("ColorChooser.cancelText", main.java.memoranda.util.Util.getString("Cancel"));
+		UIManager.put("ColorChooser.resetText", main.java.memoranda.util.Util.getString("Reset"));
+		UIManager.put("ColorChooser.hsbHueText", main.java.memoranda.util.Util.getString("H"));
+		UIManager.put("ColorChooser.hsbSaturationText", main.java.memoranda.util.Util.getString("S"));
+		UIManager.put("ColorChooser.hsbBrightnessText", main.java.memoranda.util.Util.getString("B"));
+		UIManager.put("ColorChooser.hsbRedText", main.java.memoranda.util.Util.getString("R"));
+		UIManager.put("ColorChooser.hsbGreenText", main.java.memoranda.util.Util.getString("G"));
+		UIManager.put("ColorChooser.hsbBlueText", main.java.memoranda.util.Util.getString("B2"));
+		UIManager.put("ColorChooser.rgbRedText", main.java.memoranda.util.Util.getString("Red"));
+		UIManager.put("ColorChooser.rgbGreenText", main.java.memoranda.util.Util.getString("Green"));
+		UIManager.put("ColorChooser.rgbBlueText", main.java.memoranda.util.Util.getString("Blue"));
 
 		Color initColor = Util.decodeColor(bgcolorField.getText());
 
 		Color c =
 			JColorChooser.showDialog(
 				this,
-				Local.getString("Table background color"),
+				main.java.memoranda.util.Util.getString("Table background color"),
 				initColor);
 		if (c == null)
 			return;

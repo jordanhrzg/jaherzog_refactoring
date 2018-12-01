@@ -24,8 +24,6 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.Border;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
-
 /**
  * <p>Title: </p>
  * <p>Description: </p>
@@ -133,7 +131,7 @@ public class TdDialog extends JDialog {
   Border border5;
 
   public TdDialog(Frame frame) {
-    super(frame, Local.getString("Table properties"), true);
+    super(frame, main.java.memoranda.util.Util.getString("Table properties"), true);
     try {
       jbInit();
       pack();
@@ -166,7 +164,7 @@ public class TdDialog extends JDialog {
     cancelB.setMaximumSize(new Dimension(100, 26));
     cancelB.setMinimumSize(new Dimension(100, 26));
     cancelB.setPreferredSize(new Dimension(100, 26));
-    cancelB.setText(Local.getString("Cancel"));
+    cancelB.setText(main.java.memoranda.util.Util.getString("Cancel"));
     cancelB.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(ActionEvent e) {
         cancelB_actionPerformed(e);
@@ -192,7 +190,7 @@ public class TdDialog extends JDialog {
     headerPanel.setLayout(flowLayout7);
     header.setFont(new java.awt.Font("Dialog", 0, 20));
     header.setForeground(new Color(0, 0, 124));
-    header.setText(Local.getString("Table properties"));
+    header.setText(main.java.memoranda.util.Util.getString("Table properties"));
     header.setIcon(new ImageIcon(main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource("/htmleditor/icons/tablebig.png")));
     flowLayout7.setAlignment(FlowLayout.LEFT);
     flowLayout7.setHgap(2);
@@ -200,7 +198,7 @@ public class TdDialog extends JDialog {
     jLabel4.setMaximumSize(new Dimension(70, 16));
     jLabel4.setMinimumSize(new Dimension(50, 16));
     jLabel4.setPreferredSize(new Dimension(70, 16));
-    jLabel4.setText(Local.getString("Width"));
+    jLabel4.setText(main.java.memoranda.util.Util.getString("Width"));
     flowLayout5.setAlignment(FlowLayout.LEFT);
     tdHeightField.setMinimumSize(new Dimension(30, 25));
     tdHeightField.setPreferredSize(new Dimension(50, 25));
@@ -208,7 +206,7 @@ public class TdDialog extends JDialog {
     jLabel7.setMaximumSize(new Dimension(70, 16));
     jLabel7.setMinimumSize(new Dimension(40, 16));
     jLabel7.setPreferredSize(new Dimension(70, 16));
-    jLabel7.setText(Local.getString("Row span"));
+    jLabel7.setText(main.java.memoranda.util.Util.getString("Row span"));
     flowLayout6.setAlignment(FlowLayout.LEFT);
     jPanel7.setLayout(flowLayout6);
     tdPanel.setLayout(gridLayout2);
@@ -219,7 +217,7 @@ public class TdDialog extends JDialog {
     tdAlignCB.setBackground(new Color(230, 230, 230));
     tdAlignCB.setFont(new java.awt.Font("Dialog", 1, 10));
     tdAlignCB.setPreferredSize(new Dimension(63, 25));
-    jLabel6.setText(Local.getString("Col span"));
+    jLabel6.setText(main.java.memoranda.util.Util.getString("Col span"));
     jLabel6.setPreferredSize(new Dimension(70, 16));
     jLabel6.setMinimumSize(new Dimension(50, 16));
     jLabel6.setMaximumSize(new Dimension(70, 16));
@@ -229,16 +227,16 @@ public class TdDialog extends JDialog {
     jLabel9.setMaximumSize(new Dimension(70, 16));
     jLabel9.setMinimumSize(new Dimension(40, 16));
     jLabel9.setPreferredSize(new Dimension(70, 16));
-    jLabel9.setText(Local.getString("Vert. align"));
+    jLabel9.setText(main.java.memoranda.util.Util.getString("Vert. align"));
     jLabel5.setMaximumSize(new Dimension(70, 16));
     jLabel5.setMinimumSize(new Dimension(40, 16));
     jLabel5.setPreferredSize(new Dimension(70, 16));
-    jLabel5.setText(Local.getString("Height"));
+    jLabel5.setText(main.java.memoranda.util.Util.getString("Height"));
     trPanel.setLayout(gridLayout4);
     trPanel.setBorder(border2);
     gridLayout4.setColumns(1);
     gridLayout4.setRows(2);
-    jLabel20.setText(Local.getString("Align"));
+    jLabel20.setText(main.java.memoranda.util.Util.getString("Align"));
     jLabel20.setPreferredSize(new Dimension(70, 16));
     jLabel20.setMinimumSize(new Dimension(50, 16));
     jLabel20.setMaximumSize(new Dimension(70, 16));
@@ -249,7 +247,7 @@ public class TdDialog extends JDialog {
     tdBgcolorField.setPreferredSize(new Dimension(70, 25));
     tdBgcolorField.setMinimumSize(new Dimension(60, 25));
     jPanel14.setLayout(flowLayout12);
-    jLabel21.setText(Local.getString("Fill color"));
+    jLabel21.setText(main.java.memoranda.util.Util.getString("Fill color"));
     jLabel21.setPreferredSize(new Dimension(70, 16));
     jLabel21.setMinimumSize(new Dimension(50, 16));
     jLabel21.setMaximumSize(new Dimension(70, 16));
@@ -261,7 +259,7 @@ public class TdDialog extends JDialog {
         tdBgcolorB_actionPerformed(e);
       }
     });
-    tdNowrapChB.setText(Local.getString("No text wrapping"));
+    tdNowrapChB.setText(main.java.memoranda.util.Util.getString("No text wrapping"));
     trAlignCB.setPreferredSize(new Dimension(100, 25));
     trAlignCB.setFont(new java.awt.Font("Dialog", 1, 10));
     trAlignCB.setBackground(new Color(230, 230, 230));
@@ -271,9 +269,9 @@ public class TdDialog extends JDialog {
     jLabel22.setMaximumSize(new Dimension(50, 16));
     jLabel22.setMinimumSize(new Dimension(50, 16));
     jLabel22.setPreferredSize(new Dimension(50, 16));
-    jLabel22.setText(Local.getString("Align"));
+    jLabel22.setText(main.java.memoranda.util.Util.getString("Align"));
     flowLayout10.setAlignment(FlowLayout.LEFT);
-    jLabel16.setText(Local.getString("Vert. align"));
+    jLabel16.setText(main.java.memoranda.util.Util.getString("Vert. align"));
     jLabel16.setPreferredSize(new Dimension(80, 16));
     jLabel16.setMinimumSize(new Dimension(40, 16));
     jLabel16.setMaximumSize(new Dimension(80, 16));
@@ -283,7 +281,7 @@ public class TdDialog extends JDialog {
     jLabel23.setMaximumSize(new Dimension(70, 16));
     jLabel23.setMinimumSize(new Dimension(50, 16));
     jLabel23.setPreferredSize(new Dimension(50, 16));
-    jLabel23.setText(Local.getString("Fill color"));
+    jLabel23.setText(main.java.memoranda.util.Util.getString("Fill color"));
     jPanel15.setLayout(flowLayout13);
     flowLayout13.setAlignment(FlowLayout.LEFT);
     trBgcolorB.setMinimumSize(new Dimension(25, 25));
@@ -298,11 +296,11 @@ public class TdDialog extends JDialog {
     tdColspan.setPreferredSize(new Dimension(50, 24));
     tdRowspan.setBorder(border5);
     tdRowspan.setPreferredSize(new Dimension(50, 24));
-    jLabel8.setText(Local.getString("Width"));
+    jLabel8.setText(main.java.memoranda.util.Util.getString("Width"));
     jLabel8.setPreferredSize(new Dimension(70, 16));
     jLabel8.setMinimumSize(new Dimension(60, 16));
     jLabel8.setMaximumSize(new Dimension(70, 16));
-    jLabel12.setText(Local.getString("Border"));
+    jLabel12.setText(main.java.memoranda.util.Util.getString("Border"));
     jLabel12.setPreferredSize(new Dimension(70, 16));
     jLabel12.setMinimumSize(new Dimension(60, 16));
     jLabel12.setMaximumSize(new Dimension(70, 16));
@@ -313,7 +311,7 @@ public class TdDialog extends JDialog {
     jLabel24.setMaximumSize(new Dimension(70, 16));
     jLabel24.setMinimumSize(new Dimension(60, 16));
     jLabel24.setPreferredSize(new Dimension(70, 16));
-    jLabel24.setText(Local.getString("Align"));
+    jLabel24.setText(main.java.memoranda.util.Util.getString("Align"));
     tablePanel.setBorder(border2);
     tablePanel.setLayout(gridLayout3);
     gridLayout3.setColumns(1);
@@ -332,17 +330,17 @@ public class TdDialog extends JDialog {
     jLabel13.setMaximumSize(new Dimension(70, 16));
     jLabel13.setMinimumSize(new Dimension(40, 16));
     jLabel13.setPreferredSize(new Dimension(70, 16));
-    jLabel13.setText(Local.getString("Cell spacing"));
+    jLabel13.setText(main.java.memoranda.util.Util.getString("Cell spacing"));
     cellspacing.setBorder(border5);
     cellspacing.setPreferredSize(new Dimension(50, 24));
     jLabel17.setMaximumSize(new Dimension(70, 16));
     jLabel17.setMinimumSize(new Dimension(40, 16));
     jLabel17.setPreferredSize(new Dimension(70, 16));
-    jLabel17.setText(Local.getString("Vert. align"));
+    jLabel17.setText(main.java.memoranda.util.Util.getString("Vert. align"));
     jLabel25.setMaximumSize(new Dimension(70, 16));
     jLabel25.setMinimumSize(new Dimension(70, 16));
     jLabel25.setPreferredSize(new Dimension(70, 16));
-    jLabel25.setText(Local.getString("Fill color"));
+    jLabel25.setText(main.java.memoranda.util.Util.getString("Fill color"));
     bgColorB.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(ActionEvent e) {
         bgColorB_actionPerformed(e);
@@ -358,7 +356,7 @@ public class TdDialog extends JDialog {
     alignCB.setBackground(new Color(230, 230, 230));
     alignCB.setFont(new java.awt.Font("Dialog", 1, 10));
     alignCB.setPreferredSize(new Dimension(63, 25));
-    jLabel14.setText(Local.getString("Cell padding"));
+    jLabel14.setText(main.java.memoranda.util.Util.getString("Cell padding"));
     jLabel14.setPreferredSize(new Dimension(70, 16));
     jLabel14.setMinimumSize(new Dimension(60, 16));
     jLabel14.setMaximumSize(new Dimension(70, 16));
@@ -367,7 +365,7 @@ public class TdDialog extends JDialog {
     jLabel15.setMaximumSize(new Dimension(70, 16));
     jLabel15.setMinimumSize(new Dimension(40, 16));
     jLabel15.setPreferredSize(new Dimension(70, 16));
-    jLabel15.setText(Local.getString("Height"));
+    jLabel15.setText(main.java.memoranda.util.Util.getString("Height"));
     jPanel14.add(jLabel21, null);
     jPanel14.add(tdBgcolorField, null);
     jPanel14.add(tdBgcolorB, null);
@@ -397,8 +395,8 @@ public class TdDialog extends JDialog {
     jPanel7.add(tdAlignCB, null);
     jPanel7.add(jLabel9, null);
     jPanel7.add(tdValignCB, null);
-    jTabbedPane1.add(tdPanel,  Local.getString("Table cell"));
-    jTabbedPane1.add(trPanel,  Local.getString("Table row"));
+    jTabbedPane1.add(tdPanel,  main.java.memoranda.util.Util.getString("Table cell"));
+    jTabbedPane1.add(trPanel,  main.java.memoranda.util.Util.getString("Table row"));
     tdPanel.add(jPanel14, null);
     jPanel11.add(jLabel22, null);
     jPanel11.add(trAlignCB, null);
@@ -437,7 +435,7 @@ public class TdDialog extends JDialog {
     jPanel12.add(alignCB, null);
     jPanel12.add(jLabel17, null);
     jPanel12.add(vAlignCB, null);
-    jTabbedPane1.add(tablePanel,  Local.getString("Table"));
+    jTabbedPane1.add(tablePanel,  main.java.memoranda.util.Util.getString("Table"));
   }
 
   void okB_actionPerformed(ActionEvent e) {
@@ -451,21 +449,21 @@ public class TdDialog extends JDialog {
 
 
   void tdBgcolorB_actionPerformed(ActionEvent e) {
-     Color c = JColorChooser.showDialog(this, Local.getString("Table cell background color"), Util.decodeColor(tdBgcolorField.getText()));
+     Color c = JColorChooser.showDialog(this, main.java.memoranda.util.Util.getString("Table cell background color"), Util.decodeColor(tdBgcolorField.getText()));
      if (c == null) return;
      tdBgcolorField.setText(Util.encodeColor(c));
      Util.setBgcolorField(tdBgcolorField);
   }
 
   void trBgcolorB_actionPerformed(ActionEvent e) {
-     Color c = JColorChooser.showDialog(this, Local.getString("Table row background color"), Util.decodeColor(trBgcolorField.getText()));
+     Color c = JColorChooser.showDialog(this, main.java.memoranda.util.Util.getString("Table row background color"), Util.decodeColor(trBgcolorField.getText()));
      if (c == null) return;
      trBgcolorField.setText(Util.encodeColor(c));
      Util.setBgcolorField(trBgcolorField);
   }
 
   void bgColorB_actionPerformed(ActionEvent e) {
-    Color c = JColorChooser.showDialog(this, Local.getString("Table background color"), Util.decodeColor(bgcolorField.getText()));
+    Color c = JColorChooser.showDialog(this, main.java.memoranda.util.Util.getString("Table background color"), Util.decodeColor(bgcolorField.getText()));
      if (c == null) return;
      bgcolorField.setText(Util.encodeColor(c));
      Util.setBgcolorField(bgcolorField);

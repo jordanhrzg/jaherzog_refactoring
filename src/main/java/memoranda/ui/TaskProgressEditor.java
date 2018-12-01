@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
 
+import interfaces.ITask;
 import main.java.memoranda.*;
 import main.java.memoranda.util.*;
 
@@ -16,7 +17,7 @@ import java.awt.event.*;
 public class TaskProgressEditor extends JPanel implements TableCellEditor{
 	
 	JTable table;
-	Task current;
+	ITask current;
 	boolean isSelected;
 	int row;
 	int column;
@@ -49,7 +50,7 @@ public class TaskProgressEditor extends JPanel implements TableCellEditor{
 	}
 	
 	public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int r, int c) { 
-		current = (Task) value;
+		current = (ITask) value;
 		this.table = table;
 		this.isSelected = isSelected;
 		row = r; column = c;

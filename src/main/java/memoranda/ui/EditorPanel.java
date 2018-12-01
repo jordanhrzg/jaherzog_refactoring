@@ -26,9 +26,9 @@ import javax.swing.JToolBar;
 import javax.swing.UIManager;
 import javax.swing.text.html.HTMLDocument;
 
+import interfaces.INote;
 import main.java.memoranda.CurrentNote;
 import main.java.memoranda.History;
-import main.java.memoranda.Note;
 import main.java.memoranda.date.CurrentDate;
 import main.java.memoranda.ui.htmleditor.HTMLEditor;
 import main.java.memoranda.util.Configuration;
@@ -95,7 +95,7 @@ public class EditorPanel extends JPanel {
 		}
 	}
 
-	public Action insertTimeAction = new AbstractAction(Local
+	public Action insertTimeAction = new AbstractAction(Util
 			.getString("Insert current time"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
 					.getResource("/ui/icons/time.png"))) {
@@ -104,7 +104,7 @@ public class EditorPanel extends JPanel {
 		}
 	};
 
-	public Action insertDateAction = new AbstractAction(Local
+	public Action insertDateAction = new AbstractAction(Util
 			.getString("Insert current date"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
 					.getResource("/ui/icons/date.png"))) {
@@ -119,7 +119,7 @@ public class EditorPanel extends JPanel {
 	 * public void actionPerformed(ActionEvent e) { doPrint(); } };
 	 */
 
-	public Action newAction = new AbstractAction(Local.getString("New note"),
+	public Action newAction = new AbstractAction(Util.getString("New note"),
 			new ImageIcon(main.java.memoranda.ui.AppFrame.class
 					.getResource("/ui/icons/filenew.png"))) {
 		public void actionPerformed(ActionEvent e) {
@@ -127,7 +127,7 @@ public class EditorPanel extends JPanel {
 		}
 	};
 
-	public Action exportAction = new AbstractAction(Local
+	public Action exportAction = new AbstractAction(Util
 			.getString("Export note to file"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
 					.getResource("/ui/icons/export.png"))) {
@@ -136,7 +136,7 @@ public class EditorPanel extends JPanel {
 		}
 	};
 
-	public Action importAction = new AbstractAction(Local
+	public Action importAction = new AbstractAction(Util
 			.getString("Insert file"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
 					.getResource("/ui/icons/import.png"))) {
@@ -145,7 +145,7 @@ public class EditorPanel extends JPanel {
 		}
 	};
 
-	public Action previewAction = new AbstractAction(Local
+	public Action previewAction = new AbstractAction(Util
 			.getString("Preview note in browser"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
 					.getResource("/ui/icons/preview.png"))) {
@@ -157,7 +157,7 @@ public class EditorPanel extends JPanel {
 	void jbInit() throws Exception {
 
 		if (!Configuration.get("DISABLE_L10N").equals("yes"))
-			main.java.memoranda.ui.htmleditor.util.Local.setMessages(Local
+			main.java.memoranda.util.Util.setMessages(Local
 					.getMessages());
 
 		editor = new HTMLEditor();
@@ -169,7 +169,7 @@ public class EditorPanel extends JPanel {
 		newB.setMinimumSize(new Dimension(24, 24));
 		newB.setPreferredSize(new Dimension(24, 24));
 		newB.setRequestFocusEnabled(false);
-		newB.setToolTipText(Local.getString("New note"));
+		newB.setToolTipText(Util.getString("New note"));
 		newB.setBorderPainted(false);
 		newB.setFocusable(false);
 		newB.setText("");
@@ -179,7 +179,7 @@ public class EditorPanel extends JPanel {
 		importB.setFocusable(false);
 		importB.setPreferredSize(new Dimension(24, 24));
 		importB.setRequestFocusEnabled(false);
-		importB.setToolTipText(Local.getString("Insert file"));
+		importB.setToolTipText(Util.getString("Insert file"));
 		importB.setMinimumSize(new Dimension(24, 24));
 		importB.setMaximumSize(new Dimension(24, 24));
 		importB.setText("");
@@ -189,7 +189,7 @@ public class EditorPanel extends JPanel {
 		exportB.setMinimumSize(new Dimension(24, 24));
 		exportB.setPreferredSize(new Dimension(24, 24));
 		exportB.setRequestFocusEnabled(false);
-		exportB.setToolTipText(Local.getString("Export note to file"));
+		exportB.setToolTipText(Util.getString("Export note to file"));
 		exportB.setBorderPainted(false);
 		exportB.setFocusable(false);
 		exportB.setText("");
@@ -199,7 +199,7 @@ public class EditorPanel extends JPanel {
 		redoB.setMinimumSize(new Dimension(24, 24));
 		redoB.setPreferredSize(new Dimension(24, 24));
 		redoB.setRequestFocusEnabled(false);
-		redoB.setToolTipText(Local.getString("Redo"));
+		redoB.setToolTipText(Util.getString("Redo"));
 		redoB.setBorderPainted(false);
 		redoB.setFocusable(false);
 		redoB.setText("");
@@ -209,7 +209,7 @@ public class EditorPanel extends JPanel {
 		copyB.setMinimumSize(new Dimension(24, 24));
 		copyB.setPreferredSize(new Dimension(24, 24));
 		copyB.setRequestFocusEnabled(false);
-		copyB.setToolTipText(Local.getString("Copy"));
+		copyB.setToolTipText(Util.getString("Copy"));
 		copyB.setBorderPainted(false);
 		copyB.setFocusable(false);
 		copyB.setText("");
@@ -219,7 +219,7 @@ public class EditorPanel extends JPanel {
 		historyBackB.setMinimumSize(new Dimension(24, 24));
 		historyBackB.setPreferredSize(new Dimension(24, 24));
 		historyBackB.setRequestFocusEnabled(false);
-		historyBackB.setToolTipText(Local.getString("History back"));
+		historyBackB.setToolTipText(Util.getString("History back"));
 		historyBackB.setBorderPainted(false);
 		historyBackB.setFocusable(false);
 		historyBackB.setText("");
@@ -229,7 +229,7 @@ public class EditorPanel extends JPanel {
 		historyForwardB.setFocusable(false);
 		historyForwardB.setPreferredSize(new Dimension(24, 24));
 		historyForwardB.setRequestFocusEnabled(false);
-		historyForwardB.setToolTipText(Local.getString("History forward"));
+		historyForwardB.setToolTipText(Util.getString("History forward"));
 		historyForwardB.setMinimumSize(new Dimension(24, 24));
 		historyForwardB.setMaximumSize(new Dimension(24, 24));
 		historyForwardB.setText("");
@@ -239,7 +239,7 @@ public class EditorPanel extends JPanel {
 		pasteB.setMinimumSize(new Dimension(24, 24));
 		pasteB.setPreferredSize(new Dimension(24, 24));
 		pasteB.setRequestFocusEnabled(false);
-		pasteB.setToolTipText(Local.getString("paste"));
+		pasteB.setToolTipText(Util.getString("paste"));
 		pasteB.setBorderPainted(false);
 		pasteB.setFocusable(false);
 		pasteB.setText("");
@@ -249,7 +249,7 @@ public class EditorPanel extends JPanel {
 		insDateB.setFocusable(false);
 		insDateB.setPreferredSize(new Dimension(24, 24));
 		insDateB.setRequestFocusEnabled(false);
-		insDateB.setToolTipText(Local.getString("Insert current date"));
+		insDateB.setToolTipText(Util.getString("Insert current date"));
 		insDateB.setMinimumSize(new Dimension(24, 24));
 		insDateB.setMaximumSize(new Dimension(24, 24));
 		insDateB.setText("");
@@ -259,7 +259,7 @@ public class EditorPanel extends JPanel {
 		insTimeB.setMinimumSize(new Dimension(24, 24));
 		insTimeB.setPreferredSize(new Dimension(24, 24));
 		insTimeB.setRequestFocusEnabled(false);
-		insTimeB.setToolTipText(Local.getString("Insert current time"));
+		insTimeB.setToolTipText(Util.getString("Insert current time"));
 		insTimeB.setBorderPainted(false);
 		insTimeB.setFocusable(false);
 		insTimeB.setText("");
@@ -269,7 +269,7 @@ public class EditorPanel extends JPanel {
 		undoB.setFocusable(false);
 		undoB.setPreferredSize(new Dimension(24, 24));
 		undoB.setRequestFocusEnabled(false);
-		undoB.setToolTipText(Local.getString("Undo"));
+		undoB.setToolTipText(Util.getString("Undo"));
 		undoB.setMinimumSize(new Dimension(24, 24));
 		undoB.setMaximumSize(new Dimension(24, 24));
 		undoB.setText("");
@@ -279,7 +279,7 @@ public class EditorPanel extends JPanel {
 		cutB.setFocusable(false);
 		cutB.setPreferredSize(new Dimension(24, 24));
 		cutB.setRequestFocusEnabled(false);
-		cutB.setToolTipText(Local.getString("Cut"));
+		cutB.setToolTipText(Util.getString("Cut"));
 		cutB.setMinimumSize(new Dimension(24, 24));
 		cutB.setMaximumSize(new Dimension(24, 24));
 		cutB.setText("");
@@ -306,7 +306,7 @@ public class EditorPanel extends JPanel {
 
 		jPanel1.setLayout(borderLayout2);
 		titleLabel.setFont(new java.awt.Font("Dialog", 1, 10));
-		titleLabel.setText(Local.getString("Title") + "  ");
+		titleLabel.setText(Util.getString("Title") + "  ");
 		titleField.setText("");
 		editorToolBar.setFloatable(false);
 		editor.editToolbar.setFloatable(false);
@@ -409,31 +409,31 @@ public class EditorPanel extends JPanel {
 
 	void exportB_actionPerformed(ActionEvent e) {
 		// Fix until Sun's JVM supports more locales...
-		UIManager.put("FileChooser.lookInLabelText", Local
+		UIManager.put("FileChooser.lookInLabelText", Util
 				.getString("Save in:"));
-		UIManager.put("FileChooser.upFolderToolTipText", Local
+		UIManager.put("FileChooser.upFolderToolTipText", Util
 				.getString("Up One Level"));
-		UIManager.put("FileChooser.newFolderToolTipText", Local
+		UIManager.put("FileChooser.newFolderToolTipText", Util
 				.getString("Create New Folder"));
-		UIManager.put("FileChooser.listViewButtonToolTipText", Local
+		UIManager.put("FileChooser.listViewButtonToolTipText", Util
 				.getString("List"));
-		UIManager.put("FileChooser.detailsViewButtonToolTipText", Local
+		UIManager.put("FileChooser.detailsViewButtonToolTipText", Util
 				.getString("Details"));
-		UIManager.put("FileChooser.fileNameLabelText", Local
+		UIManager.put("FileChooser.fileNameLabelText", Util
 				.getString("File Name:"));
-		UIManager.put("FileChooser.filesOfTypeLabelText", Local
+		UIManager.put("FileChooser.filesOfTypeLabelText", Util
 				.getString("Files of Type:"));
-		UIManager.put("FileChooser.saveButtonText", Local.getString("Save"));
-		UIManager.put("FileChooser.saveButtonToolTipText", Local
+		UIManager.put("FileChooser.saveButtonText", Util.getString("Save"));
+		UIManager.put("FileChooser.saveButtonToolTipText", Util
 				.getString("Save selected file"));
 		UIManager
-				.put("FileChooser.cancelButtonText", Local.getString("Cancel"));
-		UIManager.put("FileChooser.cancelButtonToolTipText", Local
+				.put("FileChooser.cancelButtonText", Util.getString("Cancel"));
+		UIManager.put("FileChooser.cancelButtonToolTipText", Util
 				.getString("Cancel"));
 
 		JFileChooser chooser = new JFileChooser();
 		chooser.setFileHidingEnabled(false);
-		chooser.setDialogTitle(Local.getString("Export note"));
+		chooser.setDialogTitle(Util.getString("Export note"));
 		chooser.setAcceptAllFileFilterUsed(false);
 		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		chooser
@@ -445,7 +445,7 @@ public class EditorPanel extends JPanel {
 		if (lastSel != null)
 			chooser.setCurrentDirectory(new File(lastSel));
 
-		FileExportDialog dlg = new FileExportDialog(App.getFrame(), Local
+		FileExportDialog dlg = new FileExportDialog(App.getFrame(), Util
 				.getString("Export note"), chooser);
 		String enc = (String) Context.get("EXPORT_FILE_ENCODING");
 		if (enc != null)
@@ -495,7 +495,7 @@ public class EditorPanel extends JPanel {
 
 	String initialTitle = "";
 
-	public void setDocument(Note note) {
+	public void setDocument(INote note) {
 		// Note note = CurrentProject.getNoteList().getActiveNote();
 		// try {
 		// this.editor.editor.setPage(CurrentStorage.get().getNoteURL(note));
@@ -528,31 +528,31 @@ public class EditorPanel extends JPanel {
 
 	void importB_actionPerformed(ActionEvent e) {
 		// Fix until Sun's JVM supports more locales...
-		UIManager.put("FileChooser.lookInLabelText", Local
+		UIManager.put("FileChooser.lookInLabelText", Util
 				.getString("Look in:"));
-		UIManager.put("FileChooser.upFolderToolTipText", Local
+		UIManager.put("FileChooser.upFolderToolTipText", Util
 				.getString("Up One Level"));
-		UIManager.put("FileChooser.newFolderToolTipText", Local
+		UIManager.put("FileChooser.newFolderToolTipText", Util
 				.getString("Create New Folder"));
-		UIManager.put("FileChooser.listViewButtonToolTipText", Local
+		UIManager.put("FileChooser.listViewButtonToolTipText", Util
 				.getString("List"));
-		UIManager.put("FileChooser.detailsViewButtonToolTipText", Local
+		UIManager.put("FileChooser.detailsViewButtonToolTipText", Util
 				.getString("Details"));
-		UIManager.put("FileChooser.fileNameLabelText", Local
+		UIManager.put("FileChooser.fileNameLabelText", Util
 				.getString("File Name:"));
-		UIManager.put("FileChooser.filesOfTypeLabelText", Local
+		UIManager.put("FileChooser.filesOfTypeLabelText", Util
 				.getString("Files of Type:"));
-		UIManager.put("FileChooser.openButtonText", Local.getString("Open"));
-		UIManager.put("FileChooser.openButtonToolTipText", Local
+		UIManager.put("FileChooser.openButtonText", Util.getString("Open"));
+		UIManager.put("FileChooser.openButtonToolTipText", Util
 				.getString("Open selected file"));
 		UIManager
-				.put("FileChooser.cancelButtonText", Local.getString("Cancel"));
-		UIManager.put("FileChooser.cancelButtonToolTipText", Local
+				.put("FileChooser.cancelButtonText", Util.getString("Cancel"));
+		UIManager.put("FileChooser.cancelButtonToolTipText", Util
 				.getString("Cancel"));
 
 		JFileChooser chooser = new JFileChooser();
 		chooser.setFileHidingEnabled(false);
-		chooser.setDialogTitle(Local.getString("Insert file"));
+		chooser.setDialogTitle(Util.getString("Insert file"));
 		chooser.setAcceptAllFileFilterUsed(false);
 		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		chooser.addChoosableFileFilter(new AllFilesFilter(AllFilesFilter.HTML));

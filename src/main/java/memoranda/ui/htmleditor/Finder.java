@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
+import main.java.memoranda.util.Util;
 /**
  *
  */
@@ -83,7 +83,7 @@ public class Finder extends Thread {
             editor.editor.select(matcher.start(), matcher.end());
             if (_replace != null) {
                 if (!replaceAll) {
-                    ReplaceOptionsDialog dlg = new ReplaceOptionsDialog(Local.getString("Replace this occurence?"));
+                    ReplaceOptionsDialog dlg = new ReplaceOptionsDialog(Util.getString("Replace this occurence?"));
                     Dimension dlgSize = new Dimension(400, 150);
                     dlg.setSize(400, 150);
                     Dimension frmSize = editor.getParent().getSize();
@@ -121,7 +121,7 @@ public class Finder extends Thread {
                 cdlg.cancel = false;
                 if (!showCdlg) {
                     editor.showToolsPanel();
-                    editor.toolsPanel.addTab(Local.getString("Find"), cdlg);
+                    editor.toolsPanel.addTab(Util.getString("Find"), cdlg);
                     showCdlg = true;
                 }                
                 this.suspend();
@@ -144,7 +144,7 @@ public class Finder extends Thread {
             matcher = pattern.matcher(text);
         }
 
-        JOptionPane.showMessageDialog(null, Local.getString("Search complete")+".");
+        JOptionPane.showMessageDialog(null, Util.getString("Search complete")+".");
         if (showCdlg) {
             editor.toolsPanel.remove(cdlg);
             if (editor.toolsPanel.getTabCount() == 0)

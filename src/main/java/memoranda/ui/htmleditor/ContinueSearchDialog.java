@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.java.memoranda.ui.htmleditor.util.Local;
+import main.java.memoranda.util.Util;
 
 public class ContinueSearchDialog extends JPanel {
   JPanel panel1 = new JPanel();
@@ -49,7 +49,7 @@ public class ContinueSearchDialog extends JPanel {
     cancelB.setMaximumSize(new Dimension(120, 26));
     cancelB.setMinimumSize(new Dimension(80, 26));
     cancelB.setPreferredSize(new Dimension(120, 26));
-    cancelB.setText(Local.getString("Cancel"));
+    cancelB.setText(Util.getString("Cancel"));
     cancelB.setFocusable(false);
     cancelB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -61,7 +61,7 @@ public class ContinueSearchDialog extends JPanel {
                 continueB_actionPerformed(e);
             }
         });
-    continueB.setText(Local.getString("Find next"));
+    continueB.setText(Util.getString("Find next"));
     continueB.setPreferredSize(new Dimension(120, 26));
     continueB.setMinimumSize(new Dimension(80, 26));
     continueB.setMaximumSize(new Dimension(120, 26));
@@ -69,7 +69,7 @@ public class ContinueSearchDialog extends JPanel {
     flowLayout1.setAlignment(FlowLayout.RIGHT);
     buttonsPanel.setLayout(flowLayout1);
     
-    jLabel1.setText(" "+Local.getString("Search for")+":  ");
+    jLabel1.setText(" "+Util.getString("Search for")+":  ");
     jLabel1.setIcon(new ImageIcon(main.java.memoranda.ui.htmleditor.HTMLEditor.class.getResource("/htmleditor/icons/findbig.png"))) ;   
     this.add(jLabel1, BorderLayout.WEST);
     this.add(textF,BorderLayout.CENTER);    
